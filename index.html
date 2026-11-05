@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lustre Detail Studio · Hand wash, polish and ceramic coating</title>
+  <meta name="description" content="Hand wash, paint correction and ceramic coating. Drop the car off dirty, pick it up with a mirror finish. Book a slot online in two minutes." />
+  <meta property="og:title" content="Lustre Detail Studio" />
+  <meta property="og:description" content="Bring it dirty. Pick it up glossy. Hand wash, polish and ceramic coating." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <a class="skip" href="#booking">Skip to booking</a>
+
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__inner">
+      <span class="caption-3 loader__label">Preparing the bay</span>
+      <div class="loader__bar"><span id="loaderFill"></span></div>
+      <span class="caption-5 loader__pct" id="loaderPct">0%</span>
+    </div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" aria-label="Lustre Detail Studio, back to top">
+      <span class="logo-word">LUSTRE</span><span class="caption-4 nav__sub">Detail studio</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#wash" class="title-4" data-stage="1">Wash</a>
+      <a href="#polish" class="title-4" data-stage="2">Polish</a>
+      <a href="#ceramic" class="title-4" data-stage="3">Ceramic</a>
+      <a href="#pickup" class="title-4" data-stage="4">Pick up</a>
+    </nav>
+    <a class="btn btn--light button-sm nav__cta" href="#booking">Book a detail</a>
+    <button class="nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu" id="mobileMenu" hidden>
+    <a href="#wash" class="heading-4">Wash</a>
+    <a href="#polish" class="heading-4">Polish</a>
+    <a href="#ceramic" class="heading-4">Ceramic</a>
+    <a href="#pickup" class="heading-4">Pick up</a>
+    <a href="#booking" class="heading-4">Book a detail</a>
+  </div>
+
+  <main id="top">
+    <!-- Scroll story: the canvas is fixed, these sections only give the scroll length and anchors -->
+    <section class="story" id="story" aria-label="How a detail works">
+      <div class="story__sticky">
+        <div class="scene scene--hero" data-scene="0">
+          <h1 class="display"><span class="line solid">Bring it</span><span class="line ghost">dirty.</span></h1>
+          <p class="body-6 scene__sub">Mud, salt, a winter on the road. Leave it with us for a day.</p>
+        </div>
+        <div class="scene scene--right" data-scene="1">
+          <h2 class="display"><span class="line solid">Scroll to</span><span class="line ghost">wash it.</span></h2>
+          <p class="body-6 scene__sub">Snow foam, two bucket hand wash, pH neutral soap. No brushes touch the paint.</p>
+        </div>
+        <div class="scene" data-scene="2">
+          <h2 class="display"><span class="line solid">Look</span><span class="line ghost">closer.</span></h2>
+          <p class="body-6 scene__sub">Under a 6500K inspection light every swirl and holo shows up. So we fix them.</p>
+        </div>
+        <div class="scene scene--right" data-scene="3">
+          <h2 class="display"><span class="line solid">Swirls out.</span><span class="line ghost">Glass on.</span></h2>
+          <p class="body-6 scene__sub">Machine polish in one or two stages, then a ceramic layer that makes water bead and roll.</p>
+        </div>
+        <div class="scene" data-scene="4">
+          <h2 class="display"><span class="line solid">Keys back.</span><span class="line ghost">Jaw drops.</span></h2>
+          <p class="body-6 scene__sub">We send photos before you arrive. You inspect it in daylight before you pay.</p>
+        </div>
+      </div>
+
+      <span class="anchor" id="wash" style="top:18%"></span>
+      <span class="anchor" id="polish" style="top:46%"></span>
+      <span class="anchor" id="ceramic" style="top:62%"></span>
+      <span class="anchor" id="pickup" style="top:84%"></span>
+    </section>
+
+    <section class="tagline" aria-label="Our promise">
+      <p class="heading-2 tagline__text" id="tagline">We hand back the keys only when the car looks better than the day it left the showroom.</p>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="servicesTitle">
+      <div class="container">
+        <span class="caption-3 eyebrow">Three ways in</span>
+        <h2 class="heading-3 section-title" id="servicesTitle">Pick the level of clean</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <span class="caption-3 card__tag">Wash</span>
+            <h3 class="heading-5">Hand wash and decon</h3>
+            <p class="body-6 muted">Snow foam, hand wash, iron and tar removal, wheels and arches, interior vacuum.</p>
+            <div class="card__meta"><span class="title-2">from €49</span><span class="caption-5 muted">about 2 hours</span></div>
+          </article>
+          <article class="card reveal">
+            <span class="caption-3 card__tag">Polish</span>
+            <h3 class="heading-5">Paint correction</h3>
+            <p class="body-6 muted">Clay, machine polish in one or two stages. Removes 70 to 90% of swirls and light scratches.</p>
+            <div class="card__meta"><span class="title-2">from €289</span><span class="caption-5 muted">1 to 2 days</span></div>
+          </article>
+          <article class="card reveal">
+            <span class="caption-3 card__tag">Ceramic</span>
+            <h3 class="heading-5">Correction plus ceramic</h3>
+            <p class="body-6 muted">Full correction, then a 9H ceramic coating on paint, glass and wheels. Up to 3 years of protection.</p>
+            <div class="card__meta"><span class="title-2">from €749</span><span class="caption-5 muted">2 to 3 days</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faqTitle">
+      <div class="container container--narrow">
+        <h2 class="heading-3 section-title" id="faqTitle">Questions before you book</h2>
+        <details class="reveal"><summary class="title-2">Do I pay before I see the car?</summary><p class="body-6 muted">No. You inspect it in daylight at pick up and pay only then.</p></details>
+        <details class="reveal"><summary class="title-2">Will you scratch the paint?</summary><p class="body-6 muted">We never use brushes or automatic machines. Every panel is washed by hand with fresh mitts and two buckets with grit guards.</p></details>
+        <details class="reveal"><summary class="title-2">How long does a ceramic coating last?</summary><p class="body-6 muted">Up to 3 years with a hand wash every two to four weeks. We give you a short care sheet at pick up.</p></details>
+        <details class="reveal"><summary class="title-2">Can you collect the car?</summary><p class="body-6 muted">Yes, within 15 km of the studio. Mention it in the booking notes.</p></details>
+        <details class="reveal"><summary class="title-2">What if I need to move my slot?</summary><p class="body-6 muted">Reschedule for free up to 24 hours before. Just reply to the confirmation message.</p></details>
+        <details class="reveal"><summary class="title-2">Do you work on leased cars?</summary><p class="body-6 muted">Yes. A ceramic coating also helps at lease return, since the paint is assessed on condition.</p></details>
+      </div>
+    </section>
+
+    <section class="booking" id="booking" aria-labelledby="bookingTitle">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <span class="caption-3 eyebrow">Lustre · Detail studio</span>
+          <h2 class="display display--sm" id="bookingTitle"><span class="line solid">Book your</span><span class="line solid">detail.</span></h2>
+          <p class="body-6 muted">You know the price before we start. Free reschedule up to 24 hours before your slot.</p>
+        </div>
+
+        <form class="form" id="bookingForm" novalidate>
+          <fieldset class="form__services">
+            <legend class="title-4">Service</legend>
+            <label class="chip"><input type="radio" name="service" value="Wash" checked /><span class="button-sm">Wash</span></label>
+            <label class="chip"><input type="radio" name="service" value="Polish" /><span class="button-sm">Polish</span></label>
+            <label class="chip"><input type="radio" name="service" value="Ceramic" /><span class="button-sm">Ceramic</span></label>
+          </fieldset>
+
+          <div class="field">
+            <label class="title-4" for="fName">Name</label>
+            <input id="fName" name="name" autocomplete="name" required placeholder="Lena Hartmann" />
+            <span class="caption-5 field__error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label class="title-4" for="fEmail">Email</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="lena@hartmann.de" />
+            <span class="caption-5 field__error" aria-live="polite"></span>
+          </div>
+          <div class="field field--half">
+            <label class="title-4" for="fDate">Drop off date</label>
+            <input id="fDate" name="date" type="date" required />
+            <span class="caption-5 field__error" aria-live="polite"></span>
+          </div>
+          <div class="field field--half">
+            <label class="title-4" for="fCar">Car</label>
+            <input id="fCar" name="car" placeholder="Audi Q7, black" />
+            <span class="caption-5 field__error" aria-live="polite"></span>
+          </div>
+
+          <button class="btn btn--light button-md form__submit" type="submit">Request a slot</button>
+          <p class="caption-5 muted form__note" id="formStatus" role="status">Demo build: requests stay on this device.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <span class="caption-5 muted">© 2026 Lustre Detail Studio</span>
+      <nav class="footer__links" aria-label="Legal">
+        <a class="caption-4" href="/privacy.html">Privacy</a>
+        <a class="caption-4" href="/terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Stage HUD, mirrors the reference's bottom pill -->
+  <div class="hud" id="hud" aria-hidden="true">
+    <div class="hud__cell"><span class="caption-5 muted">Stage</span><span class="caption-3" id="hudStage">01 / 05</span></div>
+    <div class="hud__cell"><span class="caption-5 muted">Process</span><span class="caption-3" id="hudName">Drop off</span></div>
+    <a class="hud__btn button-xsm" href="#booking" tabindex="-1">Book</a>
+    <span class="hud__progress"><span id="hudFill"></span></span>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
