@@ -1,6 +1,8 @@
 # Lustre Detail Studio: scroll-driven car wash landing (demo)
 
-Three.js + GSAP ScrollTrigger + Lenis, built with Vite.
+Live demo: https://avelnet.github.io/lustre-car-wash-3d/
+
+Three.js + GSAP ScrollTrigger + Lenis, built with Vite. Deployed to GitHub Pages on every push to `main`.
 
 ```
 npm install

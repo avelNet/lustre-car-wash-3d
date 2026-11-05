@@ -382,9 +382,9 @@ export async function createScene(canvas, { onProgress } = {}) {
   scene.add(sunLight);
 
   /* Car */
-  const draco = new DRACOLoader().setDecoderPath('/draco/');
+  const draco = new DRACOLoader().setDecoderPath(import.meta.env.BASE_URL + 'draco/');
   const loader = new GLTFLoader().setDRACOLoader(draco);
-  const gltf = await loader.loadAsync('/models/car.glb', (e) => {
+  const gltf = await loader.loadAsync(import.meta.env.BASE_URL + 'models/car.glb', (e) => {
     if (onProgress && e.total) onProgress(e.loaded / e.total);
   });
   const car = gltf.scene;
